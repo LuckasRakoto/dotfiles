@@ -1,0 +1,8 @@
+{
+    "Handle error": {
+        "prefix": "handlerr",
+        "body": ["if err != nil{\n\treturn\n}"],
+        "description": "Handle error"
+    }
+}
+

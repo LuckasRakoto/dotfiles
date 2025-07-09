@@ -1,0 +1,37 @@
+{
+    "Init tests": {
+        "prefix": "TEST",
+        "body": [
+            "import { Test, TestingModule } from '@nestjs/testing';",
+            "import { SinonStubbedInstance, createStubInstance } from 'sinon';",
+            "import { AuthGuard } from '@app/guards/auth/auth.guard';",
+            "import { LoggingInterceptor } from '@app/interceptors/logging/logging.interceptor';",
+            "",
+            "describe('', () => {",
+            "    let object: Object;",
+            "    let dependency: SinonStubbedInstance<Dependency>;",
+            "",
+            "    beforeEach(async () => {",
+            "        dependency = createStubInstance(Dependency);",
+            "",
+            "        const module: TestingModule = await Test.createTestingModule({",
+            "            controllers: [Object],",
+            "            providers: [",
+            "                { provide: Object, useValue: object },",
+            "            ],",
+            "        })",
+            "        .compile();",
+            "",
+            "        controller = module.get<Object>(Object);",
+            "    });",
+            "",
+            "    describe('init', () => {",
+            "        it('should be defined', () => {",
+            "            expect(object).toBeDefined();",
+            "        });",
+            "    });",
+            "});"
+        ],
+        "description": "Init spec.ts tests"
+    }
+}

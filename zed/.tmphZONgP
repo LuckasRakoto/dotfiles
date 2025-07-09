@@ -1,0 +1,16 @@
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Extension","extension_id":"make","version":"1.0.0"}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Setting","setting":"theme","value":"One Dark"}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Setting","setting":"keymap","value":"VSCode"}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"App","operation":"open"}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Editor","operation":"open","file_extension":"scss","vim_mode":true,"copilot_enabled":false,"copilot_enabled_for_language":false}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Editor","operation":"open","file_extension":"ts","vim_mode":true,"copilot_enabled":false,"copilot_enabled_for_language":false}
+{"signed_in":true,"milliseconds_since_first_event":16547,"type":"Editor","operation":"open","file_extension":"scss","vim_mode":true,"copilot_enabled":false,"copilot_enabled_for_language":false}
+{"signed_in":true,"milliseconds_since_first_event":19311,"type":"Editor","operation":"open","file_extension":"html","vim_mode":true,"copilot_enabled":false,"copilot_enabled_for_language":false}
+{"signed_in":true,"milliseconds_since_first_event":34362,"type":"Edit","duration":1807,"environment":"terminal"}
+{"signed_in":true,"milliseconds_since_first_event":58556,"type":"Editor","operation":"open","file_extension":"html","vim_mode":true,"copilot_enabled":false,"copilot_enabled_for_language":false}
+{"signed_in":true,"milliseconds_since_first_event":71370,"type":"Editor","operation":"open","file_extension":"ts","vim_mode":true,"copilot_enabled":false,"copilot_enabled_for_language":false}
+{"signed_in":true,"milliseconds_since_first_event":78816,"type":"Editor","operation":"open","file_extension":"ts","vim_mode":true,"copilot_enabled":false,"copilot_enabled_for_language":false}
+{"signed_in":true,"milliseconds_since_first_event":160749,"type":"Edit","duration":21621,"environment":"terminal"}
+{"signed_in":true,"milliseconds_since_first_event":166588,"type":"Editor","operation":"open","file_extension":"ts","vim_mode":true,"copilot_enabled":false,"copilot_enabled_for_language":false}
+{"signed_in":true,"milliseconds_since_first_event":239787,"type":"Memory","memory_in_bytes":237109248,"virtual_memory_in_bytes":467221446656}
+{"signed_in":true,"milliseconds_since_first_event":239787,"type":"Cpu","usage_as_percentage":12.339793,"core_count":8}
