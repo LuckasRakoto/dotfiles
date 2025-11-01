@@ -1,6 +1,3 @@
--- Adapted from a combo of
--- https://lsp-zero.netlify.app/v3.x/blog/theprimeagens-config-from-2022.html
--- https://github.com/ThePrimeagen/init.lua/blob/master/lua/theprimeagen/lazy/lsp.lua
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
@@ -14,6 +11,7 @@ return {
     "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
     "j-hui/fidget.nvim",
+    "VonHeikemen/lsp-zero.nvim",
   },
   config = function()
     local cmp_lsp = require("cmp_nvim_lsp")
@@ -26,16 +24,28 @@ return {
 
     require("fidget").setup({})
     require("mason").setup()
+    local lsp_zero = require("lsp-zero")
+    lsp_zero.format_on_save({
+        format_opts = {
+            async = false,
+            timeout_ms = 10000,
+        },
+        servers = {
+            ['clangd'] = { 'c', 'cpp' },
+            ['gopls'] = { 'go' },
+        }
+    })
 
     require('mason-lspconfig').setup({
-      automatic_enable = {
+      ensure_installed = {
           "ts_ls",
           "lua_ls",
           "jedi_language_server",
           "gopls",
           "rust_analyzer",
-          "wgsl_analyzer",
-          "clangd"
+          "glsl_analyzer",
+          "clangd",
+          "cmake",
       },
       handlers = {
         function(server_name)
@@ -58,10 +68,19 @@ return {
                   library = {
                     vim.env.VIMRUNTIME,
                   }
-                }
+                },
               }
             }
           })
+        end,
+        clangd = function()
+            require('lspconfig').clangd.setup({
+                capabilities = capabilities,
+                cmd={
+                    "clangd",
+                    "--fallback-style=none",
+                }
+            })
         end
       }
     })
@@ -69,8 +88,6 @@ return {
     local cmp = require('cmp')
     local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
-    -- this is the function that loads the extra snippets to luasnip
-    -- from rafamadriz/friendly-snippets
     require('luasnip.loaders.from_vscode').lazy_load({paths = {"./snippets/"}})
 
     cmp.setup({
@@ -81,10 +98,7 @@ return {
         { name = 'buffer',  keyword_length = 3 },
       },
       mapping = cmp.mapping.preset.insert({
-        -- ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-        -- ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
-        -- ['<C-Space>'] = cmp.mapping.complete(),
       }),
       snippet = {
         expand = function(args)
@@ -94,4 +108,3 @@ return {
     })
   end
 }
-

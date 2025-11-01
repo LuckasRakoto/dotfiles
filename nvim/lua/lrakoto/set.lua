@@ -1,4 +1,4 @@
-vim.cmd.colorscheme("tokyonight-day")
+vim.cmd.colorscheme("tokyonight-moon")
 
 vim.opt.clipboard = 'unnamedplus' -- use system keyboard for yank
 
@@ -37,5 +37,7 @@ vim.diagnostic.config({
   update_in_insert = false,
   severity_sort = true,
 })
+
 vim.o.updatetime = 250
+vim.opt.colorcolumn = "80"
 vim.cmd([[autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })]])
