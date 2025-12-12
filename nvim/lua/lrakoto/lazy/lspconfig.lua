@@ -36,6 +36,7 @@ return {
         }
     })
 
+
     require('mason-lspconfig').setup({
       ensure_installed = {
           "ts_ls",
@@ -46,6 +47,7 @@ return {
           "glsl_analyzer",
           "clangd",
           "cmake",
+          "svelte"
       },
       handlers = {
         function(server_name)
@@ -84,6 +86,8 @@ return {
         end
       }
     })
+
+    
 
     local cmp = require('cmp')
     local cmp_select = { behavior = cmp.SelectBehavior.Select }

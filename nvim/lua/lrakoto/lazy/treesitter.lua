@@ -6,7 +6,7 @@ return {
 
     configs.setup({
       ensure_installed = {
-        "c", "lua", "vim", "vimdoc", "elixir", "javascript", "html", "python", "typescript","go","gitignore"
+        "c", "lua", "vim", "vimdoc", "elixir", "javascript", "html", "python", "typescript","go","gitignore", "cpp", "rust", "glsl","cmake"
       },
       sync_install = true,
       highlight = { enable = true },
